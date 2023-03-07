@@ -1,107 +1,196 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title>LW2</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <span>Escape.</span>
-        <nav>
-            <ul>
-                <li><a href = "">HOME</a></li>
-                <li><a href = "">CATEGORIES</a></li>
-                <li><a href = "">ABOUT</a></li>
-                <li><a href = "">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Let's do it together</h1>
-        <p>We travel the world in search of stories. Come along for the ride.</p>
-        <button>
-            View Latest Posts
-        </button>   
+    <header class="header">
+        <div class="header__top_panel">
+            <div class="header__top_panel_main-phrase">
+                <span>Escape.</span>
+            </div>
+            <div class="header__top_panel_list">
+                <nav>
+                    <ul class="non_bullet_list">
+                        <li class="non_list_item"><a href="" class="non_list_item_linked">HOME</a></li>
+                        <li class="non_list_item"><a href="" class="non_list_item_linked">CATEGORIES</a></li>
+                        <li class="non_list_item"><a href="" class="non_list_item_linked">ABOUT</a></li>
+                        <li class="non_list_item"><a href="" class="non_list_item_linked">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="header__main_panel">
+            <div class="header__main_panel_title">
+                <h1 class="title">Let's do it together</h1>
+            </div>
+            <div class="header__main_panel_content">
+                <p>We travel the world in search of stories. Come along for the ride.</p>
+            </div>
+            <button class="header__main_panel_button">
+                View Latest Posts
+            </button>
+        </div>
     </header>
-    <div>
-        <nav>
-            <ul>
-                <li><a href = "">Nature</a></li>
-                <li><a href = "">Photography</a></li>
-                <li><a href = "">Relaxation</a></li>
-                <li><a href = "">Vacation</a></li>
-                <li><a href = "">Travel</a></li>
-                <li><a href = "">Adventure</a></li>
-            </ul>
-        </nav>
+    <div class="navigation-panel">
+        <div class="navigation-panel_content">
+            <div><a href="" class="navigation-panel_content-text_linked">Nature</a></div>
+            <div><a href="" class="navigation-panel_content-text_linked">Photography</a></div>
+            <div><a href="" class="navigation-panel_content-text_linked">Relaxation</a></div>
+            <div><a href="" class="navigation-panel_content-text_linked">Vacation</a></div>
+            <div><a href="" class="navigation-panel_content-text_linked">Travel</a></div>
+            <div><a href="" class="navigation-panel_content-text_linked">Adventure</a></div>
+        </div>
     </div>
-    <div>
-        <section>
-            <h2>Featured Posts</h2>
-            <article>
-            <img src = "./img/bigimg1.png" alt = "img"> 
-            <h3>The road Ahead</h3>
-            <p>The road ahead might be paved - it might not be.</p>
-            <img src = "./img/icon2.jpg" alt = "img">
-            <span>Mat Vogels</span>
-            <span>September 25, 2015</span> 
+    <div class="main-content">
+        <section class="main-content_featured-posts">
+            <div class="main-content_featured-posts_heading">
+                <div ><h2 class = "heading">Featured Posts</h2></div>
+                <div class = "decotative_line">&nbsp;</div>
+            </div>
+            <article class="main-content_featured-posts__post featured-posts_post1">
+                <div class="main-content_featured-posts__post_content untagged">
+                    <h3 class="main-content_featured-posts__post_content__acticle-name">The road Ahead</h3>
+                    <p class="main-content_featured-posts__post_content__acticle-content ">The road ahead might be paved
+                        - it might not be.</p>
+                    <div class="main-content_featured-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <div class = "main-content_featured-posts__post__author__data">
+                            <div><span class="main-content_featured-posts__post__author__name">Mat Vogels</span></div>
+                            <div><span>September 25, 2015</span></div>
+                        </div>
+                    </div>
+                </div>
             </article>
-            <article>
-                <img src = "./img/bigimg2.png" alt = "img"> 
-                <h3>From Top Down</h3>
-                <p>Once a year, go someplace you’ve never been before.</p>
-                <img src = "./img/icon1.jpg" alt = "img">
-                <span>William Wong</span> 
-                <span>September 25, 2015</span>   
+            <article class="main-content_featured-posts__post featured-posts_post2">
+                <div class="main-content_featured-posts__post_tag">
+                    <button type="button" class="main-content_featured-posts__post_button">ADVENTURE</button>
+                </div>
+                <div class="main-content_featured-posts__post_content tagged">
+                    <h3 class="main-content_featured-posts__post_content__acticle-name">From Top Down</h3>
+                    <p class="main-content_featured-posts__post_content__acticle-content">Once a year, go someplace
+                        you’ve never been before.</p>
+                    <div class="main-content_featured-posts__post__author">
+                        <div class="icon-place icon2">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_featured-posts__post__author__name">William Wong</span>
+                        <span>September 25, 2015</span>
+                    </div>
+                </div>
             </article>
         </section>
-        <section>
-            <h2>Most Recent</h2> 
-            <article>
-                <img src = "./img/img1.jpg" alt = "img"> 
-                <h3>Still Standing Tall</h3>
-                <p>The world is a book, and those who do not travel read only one page.</p>
-                <img src = "./img/icon1.jpg" alt = "img">
-                <span>Mat Vogels</span> 
-                <span>9/25/2015</span>  
-            </article> 
-            <article>
-                <img src = "./img/img2.png" alt = "img"> 
-                <h3>Sunny Side Up</h3>
-                <p>Life begins at the end of your comfort zone.</p>
-                <img src = "./img/icon2.jpg" alt = "img">
-                <span>William Wong</span>
-                <span>9/25/2015</span>   
+        <section class="main-content_most-resent-posts">
+            <div class="main-content_featured-posts_heading">
+                <div><h2 class = "heading">Most Recent</h2></div>
+                <div class = "decotative_line">&nbsp;</div>
+            </div>
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img1.jpg" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <div class = "">
+                        <h3 class = "main-content_most-resent-posts__post__article-name">Still Standing Tall</h3>
+                        <p class = "main-content_most-resent-posts__post__article-content">Life begins at the end of your comfort zone.</p>
+                    </div>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">Mat Vogels</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <img src = "./img/img3.png" alt = "img"> 
-                <h3>Water Falls</h3>
-                <p>No place is ever as bad as they tell you it’s going to be.</p>
-                <img src = "./img/icon2.jpg" alt = "img">
-                <span>Mat Vogels</span>
-                <span>9/25/2015</span>   
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img2.png" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <h3 class = "main-content_most-resent-posts__post__article-name">Sunny Side Up</h3>
+                    <p class = "main-content_most-resent-posts__post__article-content">Life begins at the end of your comfort zone.</p>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">William Wong</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <img src = "./img/img4.png" alt = "img"> 
-                <h3>Through the Mist</h3>
-                <p>We travel not to escape life, but for life not to escape us.</p>
-                <img src = "./img/icon1.jpg" alt = "img">
-                <span>Mat Vogels</span>  
-                <span>9/25/2015</span> 
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img3.png" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <h3 class = "main-content_most-resent-posts__post__article-name">Water Falls</h3>
+                    <p class = "main-content_most-resent-posts__post__article-content">No place is ever as bad as they tell you it’s going to be.</p>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">Mat Vogel</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <img src = "./img/img5.png" alt = "img"> 
-                <h3>Awaken Early</h3>
-                <p>Travel makes you see what a tiny place you occupy in the world.</p>
-                <img src = "./img/icon2.jpg" alt = "img">
-                <span>William Wong</span>
-                <span>9/25/2015</span>   
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img4.png" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <h3 class = "main-content_most-resent-posts__post__article-name">Through the Mist</h3>
+                    <p class = "main-content_most-resent-posts__post__article-content">We travel not to escape life, but for life not to escape us.</p>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">Mat Vogel</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
             </article>
-            <article>
-                <img src = "./img/img6.png" alt = "img"> 
-                <h3>Try it Always</h3>
-                <p>Not all those who wander are lost.</p>
-                <img src = "./img/icon2.jpg" alt = "img">
-                <span>Mat Vogels</span>
-                <span>9/25/2015</span>   
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img5.png" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <h3 class = "main-content_most-resent-posts__post__article-name">Awaken Early</h3>
+                    <p class = "main-content_most-resent-posts__post__article-content">Travel makes you see what a tiny place you occupy in the world.</p>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">William Wong</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
+            </article>
+            <article class = "main-content_most-resent-posts__post">
+                <div class= "main-content_most-resent-posts__post__image">
+                    <img src="./img/img5.png" alt="img">
+                </div>
+                <div class = "main-content_most-resent-posts__post__content">
+                    <h3 class = "main-content_most-resent-posts__post__article-name">Try it Always</h3>
+                    <p class = "main-content_most-resent-posts__post__article-content">Not all those who wander are lost.</p>
+                    <div class="main-content_most-resent-posts__post__author">
+                        <div class="icon-place icon1">
+                            &nbsp;
+                        </div>
+                        <span class="main-content_most-resent-posts__post__author__name">Mat Vogels</span>
+                        <span class="main-content_most-resent-posts__post__author__date">9/25/2015</span>
+                    </div>
+                </div>
             </article>
         </section>
     </div>
@@ -109,12 +198,13 @@
         <span>Escape.</span>
         <nav>
             <ul>
-                <li><a href = "">HOME</a></li>
-                <li><a href = "">CATEGORIES</a></li>
-                <li><a href = "">ABOUT</a></li>
-                <li><a href = "">Contact</a></li>
+                <li><a href="">HOME</a></li>
+                <li><a href="">CATEGORIES</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
         </nav>
     </footer>
 </body>
+
 </html>
