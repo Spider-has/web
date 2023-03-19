@@ -1,0 +1,20 @@
+.block{
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    margin: 20px;
+    display: flex;
+    color: white;
+}
+
+.father{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: start;
+    background-color: pink;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
