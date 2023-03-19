@@ -251,6 +251,11 @@
     color: #2E2E2E;
 }
 
+.heading_type_form h2{
+    font-size: 25px;
+    color: #EFEFEF;
+}
+
 .main-content_featured-posts__post {
     display: flex;
     flex-direction: column;
@@ -453,6 +458,7 @@
     width: 188px;
     background: #DEDEDE;
 }
+
 
 .most-resent-posts-area {
     width: 65%;

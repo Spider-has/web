@@ -506,8 +506,8 @@
     align-items: center;
 }
 
-.post-content{
-    padding: 140px 0 135px 0;
+.post-content_type_post-page{
+    padding: 140px 0 135px 0;   
     width: 65%;
     justify-content: center;
     align-items: center;
