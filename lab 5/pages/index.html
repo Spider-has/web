@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <title>LW2</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="assets/css/Styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header class="header header_main-page">
+    <header class="header {{ .Header.BackgroundImage }}">
         <div class="header__panel panel">
             <div class="panel__main-phrase panel__main-phrase_main-page">
-                <span>Escape.</span>
+                <span>{{ .Header.MainPhrase }}</span>
             </div>
             <nav class="panel__navigation-list 
                             navigation-list
@@ -22,26 +22,13 @@
                             navigation-list_text-size_m">
                 <ul class="navigation-list__non-bullet-list 
                                non-bullet-list">
+                    {{ range .Header.NavigationList }}
                     <div>
                         <li class="non-bullet-list__list-item_non-enter">
-                            <a href="" class="non-bullet-list__list-item_linked">HOME</a>
+                            <a href="" class="non-bullet-list__list-item_linked">{{.}}</a>
                         </li>
                     </div>
-                    <div>
-                        <li class="non-bullet-list__list-item_non-enter">
-                            <a href="" class="non-bullet-list__list-item_linked">CATEGORIES</a>
-                        </li>
-                    </div>
-                    <div>
-                        <li class="non-bullet-list__list-item_non-enter">
-                            <a href="" class="non-bullet-list__list-item_linked">ABOUT</a>
-                        </li>
-                    </div>
-                    <div>
-                        <li class="non-bullet-list__list-item_non-enter">
-                            <a href="" class="non-bullet-list__list-item_linked">CONTACT</a>
-                        </li>
-                    </div>
+                    {{end}}
                 </ul>
             </nav>
         </div>
@@ -49,14 +36,14 @@
                     main-panel">
             <div class="main-panel__title
                         main-panel__title_main-page">
-                <h1>Let's do it together</h1>
+                <h1>{{ .Header.Title}}</h1>
             </div>
             <div class="main-panel__content
                         main-panel__content_main-page">
-                <p>We travel the world in search of stories. Come along for the ride.</p>
+                <p>{{ .Header.Subtitle}}</p>
             </div>
             <button class="main_panel_button button button_size_l">
-                View Latest Posts
+                {{ .Header.ButtonContent}}
             </button>
         </div>
     </header>
@@ -67,36 +54,13 @@
                     navigation-list_text-size_l">
             <ul class="navigation-list_non-bullet-list 
                        non-bullet-list">
+                {{range .NavigationPanel.NavigationPanelElements }}
                 <div>
                     <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Nature</a>
+                        <a href="" class="non-bullet-list__list-item_linked ">{{ . }}</a>
                     </li>
                 </div>
-                <div>
-                    <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Photography</a>
-                    </li>
-                </div>
-                <div>
-                    <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Relaxation</a>
-                    </li>
-                </div>
-                <div>
-                    <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Vacation</a>
-                    </li>
-                </div>
-                <div>
-                    <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Travel</a>
-                    </li>
-                </div>
-                <div>
-                    <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">Adventure</a>
-                    </li>
-                </div>
+                {{end}}
             </ul>
         </nav>
     </div>
@@ -104,96 +68,58 @@
         <section class="main-content__featured-posts-area featured-posts-area">
             <div class="featured-posts-area__heading heading">
                 <div>
-                    <h2>Featured Posts</h2>
+                    <h2>{{ .FeaturedPosts.Header.Title }}</h2>
                 </div>
                 <div class="heading__decotative-line">&nbsp;</div>
             </div>
             <div class="featured-posts-area_featured-posts featured-posts">
+                {{ range .FeaturedPosts.Posts}}
                 <article class="featured-posts__post 
                                 post 
                                 post_type_featured
-                                post_img_type1">
+                                {{ .BackgroundImgModifier }}">
                     <div class="post__featured-post-content-area 
                                 post-content-area">
-                        <div class="post-content-area__tag-area tag-area tag-area_type_featured">&nbsp;</div>
+                        <div class="post-content-area__tag-area tag-area tag-area_type_featured">
+                            {{ range .Tags}}
+                            <div class="tag-area_tag tag"><button
+                                class="tag__button button button_size_s">{{ . }}</button>
+                            </div>
+                            {{ end}}
+                            &nbsp;
+                        </div>
                         <div class="post-content-area_post-content 
                                     post-content
                                     post-content_type_featured">
                             <div class="post-content__article-heading
                                         post-content__article-heading_type_featured">
-                                <h3>The road Ahead</h3>
+                                <h3>{{ .Title }}</h3>
                             </div>
                             <div class="post-content__article-content
                                         post-content__article-content_type_featured">
-                                <p>The road ahead might be
-                                    paved
-                                    - it might not be.</p>
+                                <p>{{ .Subtitle}}</p>
                             </div>
                             <div class="post-content__article-footer article-footer">
                                 <div class="article-footer__icon-place 
-                                            article-footer__icon-place_icon_type1">
+                                            {{ .AuthorImg}}">
                                     &nbsp;
                                 </div>
                                 <div class="article-footer__author-info 
                                             author-info">
                                     <div class="author-info__author-name
                                                 author-info__author-name_type_featured">
-                                        <span class=>Mat Vogels</span>
+                                        <span class=>{{ .Author}}</span>
                                     </div>
                                     <div class="author-info__publication-data
                                                 author-info__publication-data_type_featured">
-                                        <span>September 25, 2015</span>
+                                        <span>{{ .PublishDate}}</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </article>
-                <article class="featured-posts__post 
-                                post 
-                                post_type_featured
-                                post_img_type2">
-                    <div class="post__post-content-area 
-                                post-content-area">
-                        <div class="post-content-area__tag-area tag-area tag-area_type_featured">&nbsp;
-                            <div class="tag-area_tag tag"><button
-                                    class="tag__button button button_size_s">ADVENTURE</button></div>
-                        </div>
-                        <div class="post-content-area_post-content 
-                                    post-content
-                                    post-content_type_featured">
-                            <div class="post-content__article-heading
-                                        post-content__article-heading_type_featured">
-                                <h3>From Top Down</h3>
-                            </div>
-                            <div class="post-content__article-content
-                                        post-content__article-content_type_featured">
-                                <p>Once a year, go
-                                    someplace
-                                    you’ve never been before.</p>
-                            </div>
-                            <div class="post-content__article-footer article-footer">
-                                <div class="article-footer__icon-place article-footer__icon-place_icon_type2">
-                                    &nbsp;
-                                </div>
-                                <div class="article-footer__author-info author-info">
-                                    <div class="author-info__author-name
-                                                author-info__author-name_type_featured">
-                                        <span>
-                                            William Wong
-                                        </span>
-                                    </div>
-                                    <div class="author-info__publication-data
-                                                author-info__publication-data_type_featured">
-                                        <span>
-                                            September 25, 2015
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                {{end}}
             </div>
         </section>
         <section class="main-content__most-resent-posts-area most-resent-posts-area">
@@ -210,7 +136,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img1.jpg" alt="img">
+                            <img src="assets/img/most-resent_post1-img.jpg" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -252,7 +178,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img2.png" alt="img">
+                            <img src="assets/img/most-resent_post2-img.png" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -293,7 +219,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img3.png" alt="img">
+                            <img src="assets/img/most-resent_post3-img.png" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -334,7 +260,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img4.png" alt="img">
+                            <img src="assets/img/most-resent_post4-img.png" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -374,7 +300,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img5.png" alt="img">
+                            <img src="assets/img/most-resent_post5-img.png" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -414,7 +340,7 @@
                     <div class="post__post-content-area 
                                 post-content-area">
                         <div class="post-content-area_img-area img-area">
-                            <img src="./img/img6.png" alt="img">
+                            <img src="assets/img/most-resent_post6-img.png" alt="img">
                         </div>
                         <div class="post-content-area_post-content 
                                     post-content
@@ -453,7 +379,7 @@
     </main>
     <footer class="footer">
         <div class="footer__form-area form-area">
-            <div cla    ss="form-area__form-header form-title">
+            <div cla ss="form-area__form-header form-title">
                 <div class="form-title__heading 
                               heading 
                               heading_type_form">
@@ -469,7 +395,7 @@
                 </form>
             </div>
         </div>
-        <div class = "footer__footer-panel footer-panel">
+        <div class="footer__footer-panel footer-panel">
             <div class="footer-panel__panel panel">
                 <div class="panel__main-phrase
                         panel__main-phrase_main-page">
@@ -507,4 +433,5 @@
         </div>
     </footer>
 </body>
+
 </html>
