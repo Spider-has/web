@@ -3,8 +3,8 @@ package main
 import (
 	"log"
 	"net/http"
-	//"github.com/go-sql-driver/mysql" // Импортируем для возможности подключения к MySQL
-	//"github.com/jmoiron/sqlx"
+
+	_ "github.com/go-sql-driver/mysql" // Импортируем для возможности подключения к MySQL
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 	mux.HandleFunc("/home", index) // Прописываем, что по пути /home выполнится наш index, отдающий нашу страницу
 	mux.HandleFunc("/post", theRoadAhead)
 
-	mux.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
+	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	log.Println("Start server " + port) // Пишем в консоль о том, что стартуем сервер
 	err := http.ListenAndServe(port, mux)

@@ -12,7 +12,7 @@
 }
 
 .header_main-page{
-    background-image: url(../img/header_background.png);
+    background-image: url(static/img/header_background.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -304,11 +304,11 @@
 }
 
 .post_img_type1 {
-    background-image: url(../img/featured-post_post1-img.png);
+    background-image: url(static/img/featured-post_post1-img.png);
 }
 
 .post_img_type2 {
-    background-image: url(../img/featured-post_post2-img.png);
+    background-image: url(static/img/featured-post_post2-img.png);
 }
 
 .main-content_featured-posts__post_content {
@@ -444,11 +444,11 @@
 }
 
 .article-footer__icon-place_icon_type1 {
-    background-image: url(../img/mat-vogels.jpg);
+    background-image: url(static/img/mat-vogels.jpg);
 }
 
 .article-footer__icon-place_icon_type2 {
-    background-image: url(../img/william-wong.jpg);
+    background-image: url(static/img/william-wong.jpg);
 }
 
 .heading__decotative-line {
@@ -503,12 +503,15 @@
     width: 100%;
     height: auto;
     display: flex;
-    background-image: url(../img/footer_img.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.footer_background-img{
+    background-image: url(static/img/footer_img.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .footer__form-area{
