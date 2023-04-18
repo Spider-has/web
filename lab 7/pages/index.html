@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LW2</title>
+    <link rel="stylesheet" href="static/css/Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header {{ .Header.BackgroundImage }}">
+        <div class="header__panel panel">
+            <div class="panel__main-phrase panel__main-phrase_main-page">
+                <span>
+                    {{ .Header.MainPhrase }}
+                </span>
+            </div>
+            <nav class="panel__navigation-list 
+                            navigation-list
+                            navigation-list_size_m
+                            navigation-list_text-size_m">
+                <ul class="navigation-list__non-bullet-list 
+                               non-bullet-list">
+                    {{ range .Header.NavigationList }}
+                    <div>
+                        <li class="non-bullet-list__list-item_non-enter">
+                            <a href="" class="non-bullet-list__list-item_linked">{{.}}</a>
+                        </li>
+                    </div>
+                    {{end}}
+                </ul>
+            </nav>
+        </div>
+        <div class="header__main-panel_main-page
+                    main-panel">
+            <div class="main-panel__title
+                        main-panel__title_main-page">
+                <h1>{{ .Header.Title}}</h1>
+            </div>
+            <div class="main-panel__content
+                        main-panel__content_main-page">
+                <p>{{ .Header.Subtitle}}</p>
+            </div>
+            <button class="main_panel_button button button_size_l">
+                {{ .Header.ButtonContent}}
+            </button>
+        </div>
+    </header>
+    <div class="navigation-panel">
+        <nav class="navigation-panel_navigation-list 
+                    navigation-list
+                    navigation-list_size_l
+                    navigation-list_text-size_l">
+            <ul class="navigation-list_non-bullet-list 
+                       non-bullet-list">
+                {{range .NavigationPanel.NavigationPanelElements }}
+                <div>
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">{{ . }}</a>
+                    </li>
+                </div>
+                {{end}}
+            </ul>
+        </nav>
+    </div>
+    <main class="main-content">
+        <section class="main-content__featured-posts-area featured-posts-area">
+            <div class="featured-posts-area__heading heading">
+                <div>
+                    <h2>{{ .FeaturedPosts.Header.Title }}</h2>
+                </div>
+                <div class="heading__decotative-line">&nbsp;</div>
+            </div>
+            <div class="featured-posts-area_featured-posts featured-posts">
+                {{ range .FeaturedPosts.Posts }}
+                <article class="featured-posts__post 
+                                post 
+                                post_type_featured
+                                {{ .BackgroundImgModifier }}">
+                    <div class="post__featured-post-content-area 
+                                post-content-area">
+                        <div class="post-content-area__tag-area tag-area tag-area_type_featured">
+                            {{ range .Tags}}
+                            <div class="tag-area_tag tag"><button class="tag__button button button_size_s">{{ .
+                                    }}</button>
+                            </div>
+                            {{ end}}
+                            &nbsp;
+                        </div>
+                        <div class="post-content-area_post-content 
+                                    post-content
+                                    post-content_type_featured">
+                            <div class="post-content__article-heading
+                                        post-content__article-heading_type_featured">
+                                <h3>{{ .Title }}</h3>
+                            </div>
+                            <div class="post-content__article-content
+                                        post-content__article-content_type_featured">
+                                <p>{{ .Subtitle }}</p>
+                            </div>
+                            <div class="post-content__article-footer article-footer">
+                                <div class="article-footer__icon-place 
+                                            {{ .AuthorImg}}">
+                                    &nbsp;
+                                </div>
+                                <div class="article-footer__author-info 
+                                            author-info">
+                                    <div class="author-info__author-name
+                                                author-info__author-name_type_featured">
+                                        <span class=>{{ .Author }}</span>
+                                    </div>
+                                    <div class="author-info__publication-data
+                                                author-info__publication-data_type_featured">
+                                        <span>{{ .PublishDate }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                {{end}}
+            </div>
+        </section>
+        <section class="main-content__most-resent-posts-area most-resent-posts-area">
+            <div class="most-resent-posts-area__heading heading">
+                <div>
+                    <h2>{{ .MostResentPosts.Header.Title}}</h2>
+                </div>
+                <div class="heading__decotative-line">&nbsp;</div>
+            </div>
+            <div class="most-resent-posts-area__most-resent-posts most-resent-posts">
+                {{ range .MostResentPosts.Posts }}
+                <a href = "/post/{{ .Posts.PostID }}">
+                    <article class="most-resent-posts__post 
+                                post 
+                                post_type_most-resent">
+                        <div class="post__post-content-area 
+                                post-content-area">
+                            <div class="post-content-area_img-area img-area">
+                                <img src="{{ .BackgroundImgModifier }}" alt="img">
+                            </div>
+                            <div class="post-content-area_post-content 
+                                    post-content
+                                    post-content_type_most-resent">
+                                <div class="post-content__article-heading 
+                                    post-content__article-heading_type_most-resent">
+                                    <h3>{{ .Title }}</h3>
+                                </div>
+                                <div class="post-content__article-content
+                                    post-content__article-content_type_most-resent">
+                                    <p>{{ .Subtitle }}
+                                    </p>
+                                </div>
+                                <div class="post-content__article-footer 
+                                    article-footer
+                                    article-footer_type_most-resent">
+                                    <div class="article-footer__icon-place {{ .AuthorImg }}">
+                                        {{ range .Tags}}
+                                        <div class="tag-area_tag tag"><button class="tag__button button button_size_s">'
+                                                {{ . }}</button>
+                                        </div>
+                                        {{ end }}
+                                        &nbsp;
+                                    </div>
+                                    <div class="article-footer__author-info author-info">
+                                        <div>
+                                            <span class="author-info__author-name 
+                                                    author-info__author-name_type_most-resent">{{ .Author }}
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <span class="author-info__publication-data
+                                                     author-info__publication-data_type_most-resent">{{ .PublishDate }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+                </article>
+                {{ end }}
+            </div>
+        </section>
+    </main>
+    <footer class="footer
+                   {{ .Footer.BackgroundImage }}">
+        <div class="footer__form-area form-area">
+            <div class="form-area__form-header form-title">
+                <div class="form-title__heading 
+                              heading 
+                              heading_type_form">
+                    <h2>{{ .Footer.Form.Title }}</h2>
+                    <div class="heading__decotative-line">&nbsp;</div>
+                </div>
+            </div>
+            <div class="form-area__form form">
+                <form class="form__input input" action="#" method="post" target="_blank">
+                    <input class="form__input-text input-text" placeholder="{{ .Footer.Form.InputFieldPlaceholder }}"
+                        type="text" required>
+                    <input class="form__input-submit-button input-submit-button"
+                        value="{{ .Footer.Form.ButtonContent }}" type="submit">
+                </form>
+            </div>
+        </div>
+        <div class="footer__footer-panel footer-panel">
+            <div class="footer-panel__panel panel">
+                <div class="panel__main-phrase
+                        panel__main-phrase_main-page">
+                    <span>{{ .Footer.MainPhrase }}</span>
+                </div>
+                <nav class="panel__navigation-list 
+                            navigation-list
+                            navigation-list_size_sm
+                            navigation-list_text-size_sm">
+                    <ul class="navigation-list__non-bullet-list 
+                               non-bullet-list">
+                        {{ range .Footer.NavigationList }}
+                        <div>
+                            <li class="non-bullet-list__list-item_non-enter">
+                                <a href="" class="non-bullet-list__list-item_linked">{{ .}}</a>
+                            </li>
+                        </div>
+                        {{end}}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
