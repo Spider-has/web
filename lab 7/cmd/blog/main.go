@@ -27,7 +27,7 @@ func main() {
 	mux := http.NewServeMux()           // Сущность Mux, которая позволяет маршрутизировать запросы к определенным обработчикам,
 	mux.HandleFunc("/home", index(dbx)) // Прописываем, что по пути /home выполнится наш index, отдающий нашу страницу
 
-	mux.HandleFunc("/order/{orderID}", post(dbx))
+	mux.HandleFunc("/post/{orderID}", postsData(dbx))
 
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
