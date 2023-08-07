@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>LW7</title>
+    <meta name = "viewport" content = "width=device-width, inital-scale = 1.0">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +12,29 @@
 </head>
 
 <body>
+    <nav id ="burger-menu" class="burger-menu-navigation-list
+                            navigation-list
+                            navigation-list_size_m
+                            navigation-list_text-size_m">
+                <div id ="burger-menu-close-button" class = "burger-menu-close-icon">
+                    <div id ="panel1" class="burger-close-menu-line1">
+    
+                    </div>
+                    <div id ="panel2" class="burger-close-menu-line2">
+    
+                    </div>
+                </div>
+                <ul class=" burger-menu-navigation-list__list navigation-list__non-bullet-list 
+                               non-bullet-list">
+                    {{ range .Header.NavigationList }}
+                    <div>
+                        <li class="non-bullet-list__list-item_non-enter">
+                            <a href="" class="non-bullet-list__list-item_linked">{{.}}</a>
+                        </li>
+                    </div>
+                    {{end}}
+                </ul>
+            </nav>
     <header class="header {{ .Header.BackgroundImage }}">
         <div class="header__panel panel">
             <div class="panel__main-phrase panel__main-phrase_main-page">
@@ -21,7 +45,8 @@
             <nav class="panel__navigation-list 
                             navigation-list
                             navigation-list_size_m
-                            navigation-list_text-size_m">
+                            navigation-list_text-size_m 
+                            navigation-list_header">
                 <ul class="navigation-list__non-bullet-list 
                                non-bullet-list">
                     {{ range .Header.NavigationList }}
@@ -33,7 +58,19 @@
                     {{end}}
                 </ul>
             </nav>
+            <div id ="burger-menu-open-button" class = "burger-menu-open-icon">
+                <div id ="panel1" class="burger-menu-line">
+
+                </div>
+                <div id ="panel2" class="burger-menu-line">
+
+                </div>
+                <div id ="panel3" class="burger-menu-line">
+
+                </div>
+            </div>
         </div>
+        
         <div class="header__main-panel_main-page
                     main-panel">
             <div class="main-panel__title
@@ -55,14 +92,30 @@
                     navigation-list_size_l
                     navigation-list_text-size_l">
             <ul class="navigation-list_non-bullet-list 
-                       non-bullet-list">
-                {{range .NavigationPanel.NavigationPanelElements }}
-                <div>
+                       non-bullet-list
+                       non-bullet-list_type_navigation-panel">
+                <div class = "navigation-list-triple">
                     <li class="non-bullet-list__list-item_non-enter">
-                        <a href="" class="non-bullet-list__list-item_linked ">{{ . }}</a>
+                        <a href="" class="non-bullet-list__list-item_linked ">Nature</a>
+                    </li>
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">Photography</a>
+                    </li>
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">Relaxation</a>
                     </li>
                 </div>
-                {{end}}
+                <div class = "navigation-list-triple">
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">Vacation</a>
+                    </li>
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">Travel</a>
+                    </li>
+                    <li class="non-bullet-list__list-item_non-enter">
+                        <a href="" class="non-bullet-list__list-item_linked ">Adventure</a>
+                    </li>
+                </div>
             </ul>
         </nav>
     </div>
@@ -78,53 +131,53 @@
                 {{ range .Posts}}
                 {{ if .Featured }}
                 <a class="post-link" href="{{ .PostURL }}">
-                <article class="featured-posts__post 
+                    <article class="featured-posts__post 
                                         post 
                                         post_type_featured
                                         {{ .BackgroundImgModifier }}">
 
-                    <div class="post__featured-post-content-area 
+                        <div class="post__featured-post-content-area 
                                         post-content-area">
-                        <div class="post-content-area__tag-area tag-area tag-area_type_featured">
-                            {{ range .Tags}}
-                            <div class="tag-area_tag tag"><button class="tag__button button button_size_s">
-                                    {{ . }}</button>
+                            <div class="post-content-area__tag-area tag-area tag-area_type_featured">
+                                {{ range .Tags}}
+                                <div class="tag-area_tag tag"><button class="tag__button button button_size_s">
+                                        {{ . }}</button>
+                                </div>
+                                {{ end}}
+                                &nbsp;
                             </div>
-                            {{ end}}
-                            &nbsp;
-                        </div>
-                        <div class="post-content-area_post-content 
+                            <div class="post-content-area_post-content 
                                             post-content
                                             post-content_type_featured">
-                            <div class="post-content__article-heading
+                                <div class="post-content__article-heading
                                                 post-content__article-heading_type_featured">
-                                <h3>{{ .Title }}</h3>
-                            </div>
-                            <div class="post-content__article-content
-                                                post-content__article-content_type_featured">
-                                <p>{{ .Subtitle }}</p>
-                            </div>
-                            <div class="post-content__article-footer article-footer">
-                                <div class="article-footer__icon-place 
-                                                    {{ .AuthorImg}}">
-                                    &nbsp;
+                                    <h3>{{ .Title }}</h3>
                                 </div>
-                                <div class="article-footer__author-info 
-                                                    author-info">
-                                    <div class="author-info__author-name
-                                                        author-info__author-name_type_featured">
-                                        <span class=>{{ .Author }}</span>
+                                <div class="post-content__article-content
+                                                post-content__article-content_type_featured">
+                                    <p>{{ .Subtitle }}</p>
+                                </div>
+                                <div class="post-content__article-footer article-footer">
+                                    <div class="article-footer__icon-place 
+                                                    {{ .AuthorImg}}">
+                                        &nbsp;
                                     </div>
-                                    <div class="author-info__publication-data
+                                    <div class="article-footer__author-info 
+                                                    author-info">
+                                        <div class="author-info__author-name
+                                                        author-info__author-name_type_featured">
+                                            <span class=>{{ .Author }}</span>
+                                        </div>
+                                        <div class="author-info__publication-data
                                                         author-info__publication-data_type_featured">
-                                        <span>{{ .PublishDate }}</span>
+                                            <span>{{ .PublishDate }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </article>
+                    </article>
                 </a>
                 {{end}}
                 {{end}}
@@ -147,7 +200,11 @@
                         <div class="post__post-content-area 
                                         post-content-area">
                             <div class="post-content-area_img-area img-area">
-                                <img src="{{ .BackgroundImgModifier }}" alt="img">
+                                {{ if eq .HeroImg2Name "" }}
+                                <img class="post-content-img" src="{{ .BackgroundImgModifier }}" alt="img">
+                                {{ else }}
+                                <img class="post-content-img" src="{{ .HeroImg2Name }}" alt="img">
+                                {{ end }}
                             </div>
                             <div class="post-content-area_post-content 
                                             post-content
@@ -164,6 +221,7 @@
                                 <div class="post-content__article-footer 
                                             article-footer
                                             article-footer_type_most-resent">
+                                    {{ if eq .AuthorImgPath ""}}
                                     <div class="article-footer__icon-place {{ .AuthorImg }}">
                                         {{ range .Tags}}
                                         <div class="tag-area_tag tag"><button class="tag__button button button_size_s">'
@@ -172,10 +230,21 @@
                                         {{ end }}
                                         &nbsp;
                                     </div>
+                                    {{ else }}
+                                    <div style="background-image: url({{.AuthorImgPath}});"
+                                        class="article-footer__icon-place">
+                                        {{ range .Tags}}
+                                        <div class="tag-area_tag tag"><button class="tag__button button button_size_s">'
+                                                {{ . }}</button>
+                                        </div>
+                                        {{ end }}
+                                        &nbsp;
+                                    </div>
+                                    {{end}}
                                     <div class="article-footer__author-info author-info">
                                         <div>
                                             <span class="author-info__author-name 
-                                                            author-info__author-name_type_most-resent">{{ .Author }}
+                                                    author-info__author-name_type_most-resent">{{ .Author }}
                                             </span>
                                         </div>
                                         <div>
@@ -189,8 +258,9 @@
                                 </div>
                             </div>
                         </div>
+
+                    </article>
                 </a>
-                </article>
                 {{end}}
                 {{ end }}
             </div>
@@ -227,7 +297,8 @@
                             navigation-list_size_sm
                             navigation-list_text-size_sm">
                     <ul class="navigation-list__non-bullet-list 
-                               non-bullet-list">
+                               non-bullet-list
+                               navigation-list_footer">
                         {{ range .Footer.NavigationList }}
                         <div>
                             <li class="non-bullet-list__list-item_non-enter">
@@ -240,6 +311,7 @@
             </div>
         </div>
     </footer>
+    <script src="../static/script//burger.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -29,7 +29,9 @@ func main() {
 	mux := mux.NewRouter()              // Сущность Mux, которая позволяет маршрутизировать запросы к определенным обработчикам,
 	mux.HandleFunc("/home", index(dbx)) // Прописываем, что по пути /home выполнится наш index, отдающий нашу страницу
 
-	mux.HandleFunc("/admin", admin(dbx))
+	mux.HandleFunc("/admin", adminLogin(dbx))
+
+	mux.HandleFunc("/admin/post-settings", adminPage(dbx))
 
 	mux.HandleFunc("/post/{postID}", post(dbx))
 

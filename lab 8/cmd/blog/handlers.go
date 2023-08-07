@@ -131,10 +131,31 @@ func index(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) { // Фун
 	}
 }
 
-func admin(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) { // Функция для отдачи страницы
+func adminLogin(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) { // Функция для отдачи страницы
 	return func(w http.ResponseWriter, r *http.Request) {
 
 		ts, err := template.ParseFiles("pages/admin.html") // Главная страница блога
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
+			log.Println(err)
+			return // Не забываем завершить выполнение ф-ии
+		}
+
+		adminData := struct{}{}
+
+		err = ts.Execute(w, adminData) // Запускаем шаблонизатор для вывода шаблона в тело ответа
+		if err != nil {
+			http.Error(w, "Internal Server Error", 500)
+			log.Println(err.Error())
+			return
+		}
+	}
+}
+
+func adminPage(db *sqlx.DB) func(w http.ResponseWriter, r *http.Request) { // Функция для отдачи страницы
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		ts, err := template.ParseFiles("pages/admin_page.html") // Главная страница блога
 		if err != nil {
 			http.Error(w, "Internal Server Error", 500) // В случае ошибки парсинга - возвращаем 500
 			log.Println(err)

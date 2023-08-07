@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LW7</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <meta name="viewport" content="width=device-width, inital-scale = 1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="burger-menu" class="burger-menu-navigation-list
+    navigation-list
+    navigation-list_size_m
+    navigation-list_text-size_m">
+        <div id="burger-menu-close-button" class="burger-menu-close-icon">
+            <div id="panel1" class="burger-close-menu-line1">
+
+            </div>
+            <div id="panel2" class="burger-close-menu-line2">
+
+            </div>
+        </div>
+        <ul class=" burger-menu-navigation-list__list navigation-list__non-bullet-list 
+       non-bullet-list">
+            {{ range .Header.NavigationList }}
+            <div>
+                <li class="non-bullet-list__list-item_non-enter">
+                    <a href="" class="non-bullet-list__list-item_linked">{{.}}</a>
+                </li>
+            </div>
+            {{end}}
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="header__panel panel">
+            <a class="post-link" href="../home">
+                <div class="panel__main-phrase panel__main-phrase_post-page">
+                    <span>{{ .Header.MainPhrase }}</span>
+                </div>
+            </a>
+            
+            <nav class="panel__navigation-list 
+                            navigation-list
+                            navigation-list_size_m
+                            navigation-list_text-size_m 
+                            navigation-list_header
+                            navigation-list_post-page">
+                <ul class="navigation-list__non-bullet-list 
+                               non-bullet-list">
+                    {{ range .Header.NavigationList }}
+                    <div>
+                        <li class="non-bullet-list__list-item_non-enter">
+                            <a href="" class="non-bullet-list__list-item_linked">{{.}}</a>
+                        </li>
+                    </div>
+                    {{end}}
+                </ul>
+            </nav>
+            <div id ="burger-menu-open-button" class = "burger-menu-open-icon">
+                <div id ="panel1" class="burger-menu-line">
+
+                </div>
+                <div id ="panel2" class="burger-menu-line">
+
+                </div>
+                <div id ="panel3" class="burger-menu-line">
+
+                </div>
+            </div>
+        </div>
+        <div class="header__main-panel_post-page main-panel">
+            <div class="main-panel__title
+                        main-panel__title_post-page">
+                <h1>{{ .Post.Title }}</h1>
+            </div>
+            <div class="main-panel__content
+                        main-panel__content_post-page">
+                <p>{{ .Post.Subtitle}}</p>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="main-content__main-img main-img">
+            <img src="../{{ .Post.MainImg }}" class="main-img__img" alt="img">
+        </div>
+        <div class="main-content__post-content post-content post-content_type_post-page">
+            <div class="post-content__article-content post-content__article-content_type_post-page">
+                <p>
+                    {{ .Post.Content }}
+                </p>
+            </div>
+        </div>
+    </main>
+    <div class="footer__footer-panel footer-panel">
+        <div class="footer-panel__panel panel">
+            <div class="panel__main-phrase
+                    panel__main-phrase_main-page">
+                <span>{{ .Footer.MainPhrase }}</span>
+            </div>
+            <nav class="panel__navigation-list 
+                        navigation-list
+                        navigation-list_size_sm
+                        navigation-list_text-size_sm">
+                <ul class="navigation-list__non-bullet-list 
+                           non-bullet-list
+                           navigation-list_footer">
+                    {{ range .Footer.NavigationList }}
+                    <div>
+                        <li class="non-bullet-list__list-item_non-enter">
+                            <a href="" class="non-bullet-list__list-item_linked">{{ .}}</a>
+                        </li>
+                    </div>
+                    {{end}}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+<script src="../static/script//burger.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -29,12 +29,17 @@ func main() {
 	mux := mux.NewRouter()              // Сущность Mux, которая позволяет маршрутизировать запросы к определенным обработчикам,
 	mux.HandleFunc("/home", index(dbx)) // Прописываем, что по пути /home выполнится наш index, отдающий нашу страницу
 
-	mux.HandleFunc("/admin", admin(dbx))
+	mux.HandleFunc("/admin", adminLogin(dbx))
+
+	mux.HandleFunc("/admin/post-settings", adminPage(dbx))
 
 	mux.HandleFunc("/post/{postID}", post(dbx))
 
 	mux.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
+	mux.HandleFunc("/api/login", logination(dbx)).Methods(http.MethodPost)
+	mux.HandleFunc("/api/login", loginCheck(dbx))
+	mux.HandleFunc("/api/post/", createPost(dbx)).Methods(http.MethodPost)
 	fmt.Println("Start server")
 	err = http.ListenAndServe(port, mux)
 	if err != nil {

@@ -1,4 +1,4 @@
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('The Road Ahead', 'The road ahead might be paved - it might not be.', '9/25/2015', "Mat Vogels", 
 "article-footer__icon-place_icon_type1", 1, 'post_img_type2', "Dark spruce forest frowned on either side the frozen waterway. The trees had been stripped by a recent wind of their white covering of frost, and they seemed to lean towards each other, black and ominous, in the fading light. A vast silence reigned over the land. The land itself was a desolation, lifeless, without movement, so lone and cold that the spirit of it was not even that of sadness. There was a hint in it of laughter, but of a laughter more terrible than any sadness—a laughter that was mirthless as the smile of the sphinx, a laughter cold as the frost and partaking of the grimness of infallibility. It was the masterful and incommunicable wisdom of eternity laughing at the futility of life and the effort of life. It was the Wild, the savage, frozen-hearted Northland Wild.
 
@@ -6,9 +6,9 @@ But there was life, abroad in the land and defiant. Down the frozen waterway toi
 
 In advance of the dogs, on wide snowshoes, toiled a man. At the rear of the sled toiled a second man. On the sled, in the box, lay a third man whose toil was over,—a man whom the Wild had conquered and beaten down until he would never move nor struggle again. It is not the way of the Wild to like movement. Life is an offence to it, for life is movement; and the Wild aims always to destroy movement. It freezes the water to prevent it running to the sea; it drives the sap out of the trees till they are frozen to their mighty hearts; and most ferociously and terribly of all does the Wild harry and crush into submission man—man who is the most restless of life, ever in revolt against the dictum that all movement must in the end come to the cessation of movement.
 
-But at front and rear, unawed and indomitable, toiled the two men who were not yet dead. Their bodies were covered with fur and soft-tanned leather. Eyelashes and cheeks and lips were so coated with the crystals from their frozen breath that their faces were not discernible. This gave them the seeming of ghostly masques, undertakers in a spectral world at the funeral of some ghost. But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.", './static/img/featured-post_post1-img.png');
+But at front and rear, unawed and indomitable, toiled the two men who were not yet dead. Their bodies were covered with fur and soft-tanned leather. Eyelashes and cheeks and lips were so coated with the crystals from their frozen breath that their faces were not discernible. This gave them the seeming of ghostly masques, undertakers in a spectral world at the funeral of some ghost. But under it all they were men, penetrating the land of desolation and mockery and silence, puny adventurers bent on colossal adventure, pitting themselves against the might of a world as remote and alien and pulseless as the abysses of space.", './static/img/featured-post_post1-img.png', './static/img/featured-post_post1-img.png', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('From Top Down', 'Once a year, go someplace you’ve never been before.', '9/25/2015', "William Wong", 
 "article-footer__icon-place_icon_type2", 1, 'post_img_type1', "From Top Down - A Journey to the Highest Peaks As a traveler, I firmly believe that the best way to learn about the world is by experiencing it firsthand. Every time I embark on a new journey, I am reminded of how much there is to see and learn in this world. Recently, I went on a trip that took me from the top of a mountain down to the bottom of a valley. It was an exhilarating journey that left me with memories I will cherish for a lifetime.
 
@@ -19,9 +19,9 @@ As I made my way down the mountain, I was struck by the stark contrast between t
 Throughout the journey, I was reminded of the importance of trying new things and stepping outside of our comfort zones. Every time we take a chance and explore something new, we open ourselves up to incredible experiences and opportunities. Traveling allows us to broaden our horizons and gain a deeper understanding of the world around us.
 
 In conclusion, my journey from top to bottom was a reminder of the beauty and wonder that exists in our world. It was a journey that left me with memories I will cherish for a lifetime. I encourage everyone to take the time to go somewhere they've never been before, and to experience all the amazing things our world has to offer. Only by exploring new places and trying new things can we truly appreciate the vastness and diversity of our planet.
-", './static/img/featured-post_post2-img.png');
+", './static/img/featured-post_post2-img.png', './static/img/featured-post_post2-img.png', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Still Standing Tall', 'Life begins at the end of your comfort zone.', '9/25/2015', 'William Wong', 
 'article-footer__icon-place_icon_type2', 0, './static/img/most-resent_post1-img.jpg', "Sunny Side Up - A Journey of Surprises and Delights
 
@@ -38,9 +38,9 @@ But it wasn't just the natural wonders that made this journey so special. I also
 As my journey came to a close and I boarded the ferry back to Bali, I couldn't help but feel grateful for the sunny side of this journey. It was a journey full of surprises and delights, where I discovered the beauty and warmth of a place that had been hiding in plain sight all along.
 
 If you're looking for a new adventure, consider exploring the sunny side of Southeast Asia. You might just find yourself falling in love with a place you never knew existed.
-", './static/img/most-resent_post1-img.jpg');
+", './static/img/most-resent_post1-img.jpg', './static/img/most-resent_post1-img.jpg', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Sunny Side Up', 'No place is ever as bad as they tell you it’s going to be.', '9/25/2015', 'Mat Vogels', 
 'article-footer__icon-place_icon_type1', 0, './static/img/most-resent_post2-img.jpg', "Sunny Side Up - A Journey of Surprises and Delights
 
@@ -57,9 +57,9 @@ But it wasn't just the natural wonders that made this journey so special. I also
 As my journey came to a close and I boarded the ferry back to Bali, I couldn't help but feel grateful for the sunny side of this journey. It was a journey full of surprises and delights, where I discovered the beauty and warmth of a place that had been hiding in plain sight all along.
 
 If you're looking for a new adventure, consider exploring the sunny side of Southeast Asia. You might just find yourself falling in love with a place you never knew existed.
-", './static/img/most-resent_post2-img.jpg');
+", './static/img/most-resent_post2-img.jpg',  './static/img/most-resent_post2-img.jpg', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Water Falls', 'We travel not to escape life, but for life not to escape us.', '9/25/2015', 'Mat Vogels', 
 'article-footer__icon-place_icon_type1', 0, './static/img/most-resent_post3-img.jpg', "As a traveler, I have had the opportunity to explore some of the most beautiful natural wonders that this world has to offer, but nothing quite compares to the majestic beauty of waterfalls. There is something about the raw power and grace of water cascading down rock faces that leaves you in awe and wonder.
 
@@ -72,9 +72,9 @@ Another astonishing waterfall that left me awestruck was the Victoria Falls in Z
 But not all waterfall journeys have to be grand and dramatic. Sometimes, it's the small, hidden waterfalls that leave the biggest impact. During a trekking expedition in Bali, I stumbled upon a breathtaking waterfall nestled deep within the jungle. The quiet serenity of the place and the soothing sound of the water gently flowing down the rocks made it feel like a tranquil oasis.
 
 In conclusion, waterfalls are natural wonders that never fail to amaze and inspire me. Each waterfall has its own unique personality and charm, and I feel incredibly grateful to have had the opportunity to witness their beauty firsthand. The journey to discover waterfalls has been an unforgettable one, and I cannot wait to see what other surprises the world has in store for me.
-", './static/img/most-resent_post3-img.jpg');
+", './static/img/most-resent_post3-img.jpg', './static/img/most-resent_post3-img.jpg', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Through the Mist', 'Travel makes you see what a tiny place you occupy in the world.', '9/25/2015', 'William Wong', 
 'article-footer__icon-place_icon_type2', 0, './static/img/most-resent_post4-img.jpg', "As a traveler, I have come to realize that one of the most mesmerizing experiences is watching the world awaken from behind a veil of mist. It is a unique moment when everything around you remains shrouded in mystery, and all you can hear are the sounds of nature, and all you can feel is the cool breeze on your skin. It's a moment that reminds you of how tiny you are in this vast world and how there's so much more to explore beyond your comfort zone.
 
@@ -89,9 +89,9 @@ Traveling has taught me that we often tend to overlook the simple joys of life, 
 As I reached my destination and the mist began to lift, revealing the vast expanse of the Highlands, I felt a sense of gratitude for this beautiful journey through the mist. It was a moment that made me realize that travel is not only about visiting new places but also about discovering oneself. The journey through the mist had allowed me to explore a part of myself that I had forgotten existed.
 
 In conclusion, Through the Mist was an unforgettable journey that reminded me of the beauty that lies beyond my comfort zone. It taught me to embrace the unknown and appreciate the simple joys of life. As I continue to travel, I hope to experience many more such moments that allow me to connect with nature and discover myself.
-", './static/img/most-resent_post4-img.jpg');
+", './static/img/most-resent_post4-img.jpg', './static/img/most-resent_post4-img.jpg', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Awaken Early', 'Not all those who wander are lost.', '9/25/2015', 'Mat Vogels', 
 'article-footer__icon-place_icon_type1', 0, './static/img/most-resent_post5-img.jpg', "As a traveler, I have always believed in the adage that not all those who wander are lost. The journey itself is as important as the destination. One of my favorite things about traveling is experiencing the world wake up around me. There's something magical about being up early, watching the sun rise over a new place, seeing the locals begin their day, and feeling like you have the whole world to yourself.
 
@@ -106,9 +106,9 @@ Another morning, I decided to take a hot air balloon ride over the city. We rose
 Finally, on my last morning in Cusco, I woke up early once again to visit the famous Machu Picchu ruins. I arrived just as the gates opened, and I was able to experience this incredible place without the crowds that often fill it during the day. As I stood at the top of the ruins, watching the sun rise over the mountains, I felt truly grateful for the opportunity to experience such a magical moment.
 
 In the end, ""Awaken Early"" became one of my favorite journeys. The early mornings allowed me to experience Cusco in a way that few others have, and I felt like I had truly immersed myself in the city's culture and history. It reminded me that sometimes the best moments happen when we're willing to wake up a little earlier and experience the world as it wakes up around us.
-", './static/img/most-resent_post5-img.jpg');
+", './static/img/most-resent_post5-img.jpg', './static/img/most-resent_post5-img.jpg', "");
 
-INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, image_path)
+INSERT INTO post (title, subtitle, publish_date, author, author_url, featured, image_url, content, heroImg1Path, heroImg2Path, authorImgPath)
 VALUES ('Try it Always', 'The world is a book, and those who do not travel read only one page.', '9/25/2015', 'Mat Vogels', 
 'article-footer__icon-place_icon_type1', 0, './static/img/most-resent_post6-img.jpg', "Whenever I visit a new place, I make it a point to try something new. It could be trying out the local cuisine, indulging in an adventure sport or even just taking a different route back to my hotel. This philosophy of trying something new has never failed me and has always made my travels more memorable.
 
@@ -119,5 +119,5 @@ Another instance where I tried something new was during my trip to Japan. I had 
 Trying something new can also mean stepping out of your comfort zone. During my trip to Thailand, I decided to go bungee jumping. I have a fear of heights, but I wanted to conquer it. As I stood on the platform, looking down at the water below, I felt my heart racing. But I took a deep breath and jumped. The feeling of free-falling was scary but also liberating. I felt like I had overcome a fear and had a newfound confidence.
 
 Traveling is not just about ticking off places from a bucket list, it's about experiencing new things and pushing your boundaries. Trying something new can be scary, but it can also be incredibly rewarding. So, the next time you travel, make it a point to try something new. You never know, it might just become your next favorite thing.
-", './static/img/most-resent_post6-img.jpg');
+", './static/img/most-resent_post6-img.jpg', './static/img/most-resent_post6-img.jpg', "");
 

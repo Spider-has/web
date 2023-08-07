@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>LW2</title>
-    <link rel="stylesheet" href="static/css/Styles.css">
+    <title>LW7</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
@@ -13,9 +13,11 @@
 <body>
     <header class="header">
         <div class="header__panel panel">
-            <div class="panel__main-phrase panel__main-phrase_post-page">
-                <span>{{ .Header.MainPhrase }}</span>
-            </div>
+            <a class="post-link" href = "../home">
+                <div class="panel__main-phrase panel__main-phrase_post-page">
+                    <span>{{ .Header.MainPhrase }}</span>
+                </div>
+            </a>
             <nav class="panel__navigation-list 
                             navigation-list
                             navigation-list_size_m
@@ -36,26 +38,23 @@
         <div class="header__main-panel_post-page main-panel">
             <div class="main-panel__title
                         main-panel__title_post-page">
-                <h1>{{ .HeaderPost.Title }}</h1>
+                <h1>{{ .Post.Title }}</h1>
             </div>
             <div class="main-panel__content
                         main-panel__content_post-page">
-                <p>{{ .HeaderPost.Title}}</p>
+                <p>{{ .Post.Subtitle}}</p>
             </div>
         </div>
     </header>
     <main class="main-content">
         <div class="main-content__main-img main-img">
-            <img src="./static/img/road-ahead_main-img.png" class="main-img__img" alt="img">
+            <img src="../{{ .Post.MainImg }}" class="main-img__img" alt="img">
         </div>
         <div class="main-content__post-content post-content post-content_type_post-page">
             <div class="post-content__article-content post-content__article-content_type_post-page">
-                {{ range .PostContent.Paragraphs}}
                 <p>
-                    {{ . }}
+                    {{ .Post.Content }}
                 </p>
-                <br>
-                {{end}}
             </div>
         </div>
     </main>

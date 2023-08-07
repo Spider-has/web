@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LW7</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main class="admin-page">
+        <div class="admin-page-content">
+            <div class="admin-page-content__title">
+                <div>
+                    <h1 class="admin-page-title-text_l">Escape.</h1>
+                </div>
+                <div class="admin-page-title__small-text">
+                    <span class="admin-page-title-text_m">author</span>
+                </div>
+            </div>
+            <div>
+                <span class="admin-page-subtitle-text_m">Log in to start creating</span>
+            </div>
+        </div>
+        <div class="admin-page-form-wrapper">
+            <form id="registration-form" class="admin-page-form" novalidate>
+                <div class="admin-form-heading">
+                    <h2 class="form-heading-text">
+                        Log In
+                    </h2>
+                </div>
+                <div class="admin-form-inputs">
+                    <div id = "form-error-message" class="admin-error-message">
+                        <img src="../static/img/admin/alert-circle.svg" alt="action icon" />
+                        <span id = "form-error-text" class="admin-form-subtitle">
+                            A-Ah! Check all fields,
+                        </span>
+                    </div>
+                    <div class="admin-form-inputs__input">
+                        <span class="form-before-input-text">Email</span>
+                        <input id="email-input" class="admin-form-input" placeholder=" " type="email" required/>
+                        <span id = "email-invalid-message" class="invalid-message form-before-input-text"> Email is required. </span>
+                    </div>
+                    <div class="admin-form-inputs__input">
+                        <span class="form-before-input-text">Password</span>
+                        <div class="admin-form__password-area">
+                            <input id="password-input" class="admin-form-input" placeholder=" " type="password" />
+                            <div class="input-password__eye">
+                                <img id = "show-password-button" src="../static/img/admin/eye.svg" />
+                            </div>
+                        </div>
+                        <span id = "password-invalid-message" class="invalid-message form-before-input-text"> Password is required. </span>
+                    </div>
+                    <div class="admin-form-inputs__submit">
+                        <input class="admin-form-submit-button" type="submit" value="Log In" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="../static/script/registration.js" type="text/javascript"></script>
+</body>
+
+</html>

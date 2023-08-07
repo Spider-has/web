@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LW8</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/admin.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Oxygen&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="admin-post-header">
+        <div class="admin-post-header__heading">
+            <div>
+                <span class="admin-title-text_sm">Escape.</span>
+            </div>
+            <div class="admin-page-title__small-text">
+                <span class="admin-title-text_extra-sm">author</span>
+            </div>
+        </div>
+        <div class="admin-post-header__user-menu">
+            <div>
+                <img src="../static/img/admin/avatar.svg" />
+            </div>
+            <div>
+                <img src="../static/img/admin/log-out.svg" />
+            </div>
+        </div>
+    </header>
+    <main class="admin-post-form-area">
+        <form action="" id="artcileForm" class="admin-post-form">
+            <div class="admin-post-form__header">
+                <div class="form-heading-area">
+                    <h2 class="form-heading-text">
+                        New Post
+                    </h2>
+                    <span class="admin-form-subtitle">
+                        Fill out the form bellow and publish your article
+                    </span>
+                </div>
+                <div>
+                    <input id="formSubmitButton" class="admin-form-submit-button" type="submit" value="Publish" />
+                </div>
+            </div>
+            <div class="admin-post-form__main-content-area">
+                <div class="form-title">
+                    <h3 class="admin-title-text_m">
+                        Main Information
+                    </h3>
+                </div>
+                <div class="form-settings">
+                    <div class="from-settings__main">
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Title
+                            </span>
+                            <input id="formPostTitle" class="admin-form-input" placeholder=" " type="text" required />
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Short description
+                            </span>
+                            <input id="formPostSubtitle" class="admin-form-input" placeholder=" " type="text"
+                                required />
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Author name
+                            </span>
+                            <input id="formAuthorName" class="admin-form-input" placeholder=" " type="text" required />
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Author Photo
+                            </span>
+                            <div class="input-photo-area">
+                                <label class="form-settings__image-input-area">
+                                    <div id="image-input-preview" class="image-input-preview">
+                                        <img id="AuthorAvatarImg" src="../static/img/admin/camera.svg"
+                                            alt="author image" />
+                                    </div>
+                                    <input name="avatar" id="formAuthorAvatar" class="form-image-input" type="file"
+                                        required />
+                                    <span id="onload-author-avatar-text-area" class="usual-input-text">
+                                        Upload
+                                    </span>
+                                    <div id="author-avatar-settings"
+                                        class="input-img-settings input-img-settings_centered">
+                                        <div class="input-photo-info-area">
+                                            <img src="../static/img/admin/camera.svg" alt="onload-icon" />
+                                            <span id="hero-img-1-upload-new" class="usual-input-text">
+                                                Upload New
+                                            </span>
+                                        </div>
+                                        <button id="remove-Author-Avatar-button"
+                                            class="remove-photo-button remove-photo-button_active">
+                                            <img src="../static/img/admin/trash-icon.svg" />
+                                            <span class="usual-input-text">Remove</span>
+                                        </button>
+                                    </div>
+                                </label>
+
+                            </div>
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Publish Date
+                            </span>
+                            <input id="formPublishDate" class="admin-form-input" placeholder=" " type="date"
+                                value="mm/dd/yyyy" required />
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Hero Image
+                            </span>
+                            <label class="form-settings__image-input-area
+                                                form-settings__image-input-area_full-size">
+                                <div id="hero-img-1-preview-div" class="image-input-preview 
+                                                  image-input-preview_full-size
+                                                  image-input-preview_height-l">
+                                    <img id="hero-img-1-preview" src="../static/img/admin/camera.svg"
+                                        alt="author image" />
+                                    <input name="hero-img1" id="hero-img-1-input" id="formHeroImg1"
+                                        class="form-image-input" type="file" required />
+                                    <span id="hero-img-1-upload-text" class="usual-input-text"> Upload </span>
+                                </div>
+                                <div id="hero-img-1-settings" class="input-img-settings">
+                                    <div class="input-photo-info-area">
+                                        <img src="../static/img/admin/camera.svg" alt="onload-icon" />
+                                        <span class="usual-input-text">
+                                            Upload New
+                                        </span>
+                                    </div>
+                                    <button id="remove-hero-img-1-button"
+                                        class="remove-photo-button remove-photo-button_active">
+                                        <img src="../static/img/admin/trash-icon.svg" />
+                                        <span class="usual-input-text">Remove</span>
+                                    </button>
+                                </div>
+                            </label>
+                            <div id="hero-img-1-description" class="input-description-area">
+                                <span class="form-before-input-text input-description">
+                                    Size up to 10mb. Format: png, jpeg, gif.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Hero Image
+                            </span>
+                            <label class="form-settings__image-input-area
+                                        form-settings__image-input-area_half-size">
+                                <div id="hero-img-2-preview-div" class="image-input-preview 
+                                                  image-input-preview_full-size
+                                                  image-input-preview_height-m">
+                                    <img id="hero-img-2-preview" src="../static/img/admin/camera.svg"
+                                        alt="author image" />
+                                    <input name="hero-img2" id="hero-img-2-input" id="formHeroImg1"
+                                        class="form-image-input" type="file" required />
+                                    <span id="hero-img-2-upload-text" class="usual-input-text"> Upload </span>
+                                </div>
+                                <div id="hero-img-2-settings" class="input-img-settings">
+                                    <div class="input-photo-info-area">
+                                        <img src="../static/img/admin/camera.svg" alt="onload-icon" />
+                                        <span class="usual-input-text">
+                                            Upload New
+                                        </span>
+                                    </div>
+                                    <button id="remove-hero-img-2-button"
+                                        class="remove-photo-button remove-photo-button_active">
+                                        <img src="../static/img/admin/trash-icon.svg" />
+                                        <span class="usual-input-text">Remove</span>
+                                    </button>
+                                </div>
+                            </label>
+                            <div id="hero-img-2-description" class="input-description-area">
+                                <span class="form-before-input-text input-description">
+                                    Size up to 10mb. Format: png, jpeg, gif.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="from-settings__preview">
+                        <div class="form-settings-artcile-preview">
+                            <span class="admin-prewiew-text">
+                                Article preview
+                            </span>
+                            <div class="article-preview-area">
+                                <div class="article-preview">
+                                    <div class="artcile-preview__header">
+                                        <h4 id="article-preview-title" class="article-preview-heading-title">
+                                            New Post
+                                        </h4>
+                                        <span id="article-preview-subtitle" class="article-preview-heading-subtitle">
+                                            Please, enter any description
+                                        </span>
+                                    </div>
+                                    <div class="artcile-preview__image">
+                                        <img id="arcticle-preview-image" class="arcticle-preview-image" src=""
+                                            alt="preview image" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-preview-right-gradient">
+                            </div>
+                            <div class="article-preview-bottom-gradient">
+                            </div>
+                        </div>
+                        <div class="form-settings-artcile-preview">
+                            <span class="admin-prewiew-text">
+                                Post card preview
+                            </span>
+                            <div class="article-preview-area article-preview-area_type_post">
+                                <div class="artcile-post-preview">
+                                    <div class="article-post-preview_img-place">
+                                        <img id="post-card-preview-image" class="arcticle-preview-image" src=""
+                                            alt="post-card-img" />
+                                    </div>
+                                    <div class="article-post-preview__post-content">
+                                        <h5 id="post-preview-title" class="article-post-preview-heading">
+                                            New Post
+                                        </h5>
+                                        <span id="post-preview-subtitle" class="article-post-preview-content">
+                                            Please, enter any description
+                                        </span>
+                                    </div>
+                                    <div class="article-post-preview__author-info-area">
+                                        <div class="post-preview-author-info">
+                                            <div class="post-preview-author-avatar">
+                                                <img id="post-card-author-preview-image" class="arcticle-preview-image"
+                                                    src="" alt="author preview image" />
+                                            </div>
+                                            <div class="post-preview-author-name">
+                                                <span id="post-preview-author-name" class="author-info-content">
+                                                    Enter author name
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div id="post-preview-publish-date" class="post-preview-author-publish-date">
+                                            <span>
+                                                4/19/2023
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post-preview-right-gradient">
+                            </div>
+                            <div class="post-preview-bottom-gradient">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="admin-post-form__main-content-area
+                              admin-post-form__main-content-area_full-size">
+                <div class="form-title">
+                    <h3 class="admin-title-text_m">
+                        Content
+                    </h3>
+                </div>
+                <div class="form-settings">
+                    <div class="from-settings__main
+                                    from-settings__main_full-size">
+                        <div class="form-settings-element">
+                            <span class="form-before-input-text">
+                                Post content (plain text)
+                            </span>
+                            <textarea id="formContent" class="form-content-textarea"
+                                placeholder="Type anything you want ..." required></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="../static/script/admin.js" type="text/javascript"></script>
+</body>
+
+</html>
